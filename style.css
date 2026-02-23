@@ -1,0 +1,66 @@
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('Cyrillic Old [Edited by me].otf');
+}
+
+/* reset margins so the image touches the edges of the screen */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.image-container {
+    position: relative; 
+    width: 100vw; /* 100% of the viewport width */
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    object-fit: cover; /* to delete everything that goes off the photo and not squish it */
+    display: block;
+}
+
+.image-container svg {
+    position: absolute;
+    top: 66%;   
+    left: 37%;  
+    width: 17%; 
+    height: auto;
+    
+    /* transition effect so it will be smoothly lit up */
+    transition: filter 0.3s ease; 
+}
+
+.image-container svg:hover {
+    filter: brightness(1.4); /* light up upon hovering */
+    cursor: pointer; 
+}
+
+.text-box {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 45%;
+    z-index: 10;   /* layer on top of the image */
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+#russian-text {
+    font-family: 'MyFont', sans-serif;
+    color: white;
+    font-size: 70px; /* large font size */
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+#english-text {
+    font-family: 'MyFont', sans-serif;
+    color: #e0e0e0;
+    font-size: 35px; /* smaller font size */
+    margin: 0;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+    font-style: italic;
+}
